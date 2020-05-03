@@ -1,0 +1,2 @@
+mymusic:
+    resource: 'routes/mymusic/routes.yaml'

@@ -1,0 +1,11 @@
+mymusic_admin:
+    resource: 'admin/routes.yaml'
+    prefix: /admin
+
+mymusic_api:
+    resource: 'api/routes.yaml'
+    prefix: /api
+
+mymusic_front:
+    resource: 'front/routes.yaml'
+    prefix: /

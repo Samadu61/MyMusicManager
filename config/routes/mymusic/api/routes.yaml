@@ -1,0 +1,4 @@
+mymusic_api_home:
+    methods: [GET]
+    path: /{version}
+    controller: App\Api\Controller\HomeController::indexAction
