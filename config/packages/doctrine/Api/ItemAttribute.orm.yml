@@ -1,0 +1,34 @@
+App\Api\Entity\Version\ItemAttribute:
+    type: entity
+    table: api_version_item_attributes
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 100
+            nullable: false
+        createdAt:
+            type: datetime
+            column: created_at
+            nullable: false
+        updatedAt:
+            type: datetime
+            column: updated_at
+            nullable: false
+        deletedAt:
+            type: datetime
+            column: deleted_at
+            nullable: true
+    manyToOne:
+        versionItem:
+            targetEntity: App\Api\Entity\Version\VersionItem
+            joinColumn:
+                name: version_item_id
+                referencedColumnName: id
+                onDelete: CASCADE
+            inversedBy: attributes
