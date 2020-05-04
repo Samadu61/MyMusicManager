@@ -1,0 +1,31 @@
+services:
+    # Factories
+    app.factory.version:
+        class: App\Core\Factory\Resource\Factory
+        arguments:
+            - 'App\Api\Entity\Version\Version'
+
+    app.custom_factory.version:
+        class: App\Api\Factory\Version\VersionFactory
+        decorates: app.factory.version
+        decoration_priority: 256
+        arguments:
+            - '@app.custom_factory.version.inner'
+
+    App\Api\Factory\Version\VersionFactoryInterface:
+        alias: app.custom_factory.version
+
+    app.factory.version_item:
+        class: App\Core\Factory\Resource\Factory
+        arguments:
+            - 'App\Api\Entity\Version\VersionItem'
+
+    app.custom_factory.version_item:
+        class: App\Api\Factory\Version\VersionItemFactory
+        decorates: app.factory.version_item
+        decoration_priority: 256
+        arguments:
+            - '@app.custom_factory.version_item.inner'
+
+    App\Api\Factory\Version\VersionItemFactoryInterface:
+        alias: app.custom_factory.version_item
